@@ -1,0 +1,102 @@
+/****************************************
+ * Color Pallete
+ ****************************************/
+    /** Neon Theme **
+    #Malachite-Green : #04e762
+    #Selective-Yellow : #f5b700
+    #Red-Purple : #dc0073
+    #Azure : #008bf8
+    #Lawn-Green : #89fc00
+    **/
+
+/****************************************
+ * General and Typography
+ ****************************************/
+body {
+	font-family: 'Lato', sans-serif;
+	position: relative;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+body::after {
+	content: "";
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0.2;
+	z-index: -1;
+	position: absolute;
+	background: url('../images/piano1024g.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	pointer-events: none;
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Bungee Inline', monospace;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+
+.home {
+	background-color: #dc0073;
+}
+
+.get-media {
+	background-color: #f5b700;
+}
+
+.shows {
+	background-color: #008bf8;
+}
+
+.bio {
+	background-color: #89fc00;
+}
+
+.title {
+	font-size: 90px;
+	line-height: 90px;
+	position: relative;
+	display: block;
+	max-width: 300px;
+	margin: 0 5px;
+	padding-bottom: 10px;
+}
+
+.title div {
+	display: inline-flex;
+}
+
+.title a,
+.title a:hover,
+.title a:active {
+	text-decoration: none;
+	color: inherit;
+}
+
+.title a:hover {
+	text-shadow: 2px 2px white;
+}
+
+spacer {
+	display: block;
+	height: 1px;
+	background-color: #333;
+	margin: 0 12px;
+}
+
+figure {
+	text-align: center;
+}
+
+figcaption {
+	margin-bottom: 10px;
+	font-style: italic;
+}
