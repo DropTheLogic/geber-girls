@@ -100,3 +100,19 @@ figcaption {
 	margin-bottom: 10px;
 	font-style: italic;
 }
+
+/****************************************
+ * Keyframe animation and styling
+ ****************************************/
+.spin {
+	transform-origin: center center;
+	animation-name: spin;
+	animation-duration: 0.5s;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+}
+
+@keyframes spin {
+	from { transform:rotate(0deg); }
+	to { transform:rotate(360deg); }
+}
