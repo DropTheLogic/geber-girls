@@ -104,15 +104,45 @@ figcaption {
 /****************************************
  * Keyframe animation and styling
  ****************************************/
-.spin {
+.spin,
+.wiggle {
 	transform-origin: center center;
-	animation-name: spin;
-	animation-duration: 0.5s;
 	animation-iteration-count: 1;
 	animation-timing-function: linear;
+}
+
+.spin {
+	animation-name: spin;
+	animation-duration: 0.5s;
+}
+
+.wiggle {
+	animation-name: wiggle;
+	animation-duration: 1.0s;
 }
 
 @keyframes spin {
 	from { transform:rotate(0deg); }
 	to { transform:rotate(360deg); }
+}
+
+@keyframes wiggle {
+	/* With some help from:
+	https://css-tricks.com/snippets/css/shake-css-keyframe-animation/
+	*/
+	10%, 90% {
+		transform: rotate(-4deg);
+	}
+
+	20%, 80% {
+		transform: rotate(8deg);
+	}
+
+	30%, 50%, 70% {
+		transform: rotate(-12deg);
+	}
+
+	40%, 60% {
+		transform: rotate(12deg);
+	}
 }

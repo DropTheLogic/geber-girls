@@ -83,10 +83,12 @@ function showPage(id) {
  * Initial functions and event listeners
  */
 function readyInit() {
-	// Randomly add .spin class to .title <a> elements
+	// Select all .title <a> elements
 	let clickableEls = document.getElementsByClassName('title')[0]
 		.getElementsByTagName('a');
+	// Randomly add .spin and .wiggle classes to clickableEls
 	addClassRandomly(clickableEls, 'spin', 10000, 18000);
+	addClassRandomly(clickableEls, 'wiggle', 5000, 10000);
 }
 
 // Listen to page hash location, to virtually show/hide content based on id
