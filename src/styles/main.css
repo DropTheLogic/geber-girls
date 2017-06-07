@@ -64,14 +64,13 @@ h3 {
 	font-size: 90px;
 	line-height: 90px;
 	position: relative;
-	display: block;
-	max-width: 300px;
-	margin: 0 5px;
+	display: inline;
 	padding-bottom: 10px;
 }
 
 .title div {
 	display: inline-flex;
+	letter-spacing: -12px;
 }
 
 .title a,
@@ -83,6 +82,38 @@ h3 {
 
 .title a:hover {
 	text-shadow: 2px 2px white;
+}
+
+#hero::after {
+	content: '';
+	position: absolute;
+	top: 90px;
+	left: -10px;
+	right: -36px;
+	padding-left: 10px;
+	letter-spacing: 1px;
+	background: linear-gradient(to right, white 90%, rgba(255, 255, 255, 0.0));
+	z-index: 10000000;
+
+	pointer-events: none;
+}
+
+#menu-home:hover ~ #hero::after {
+	content: 'HOME';
+}
+
+#menu-media:hover ~ #hero::after {
+	content: 'MEDIA'
+}
+
+#menu-bio:hover ~ #hero::after {
+	content: 'BIO';
+	letter-spacing: 8px;
+}
+
+#menu-shows:hover ~ #hero::after {
+	content: 'SHOW';
+	letter-spacing: 4px;
 }
 
 spacer {
