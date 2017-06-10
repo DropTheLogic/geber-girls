@@ -134,6 +134,33 @@ figcaption {
 	font-style: italic;
 }
 
+.card {
+	margin: 20px 0 25px;
+	padding-top: 15px;
+	background-color: rgba(255, 255, 255, 0.5);
+	box-shadow: 2px 2px 2px #333;
+}
+
+.card p {
+	padding: 0 15px 15px 15px;
+}
+
+.show {
+	text-align: center;
+}
+
+.show-date {
+	text-transform: uppercase;
+	font-size: 20px;
+	font-style: italic;
+}
+
+.show-location {
+	margin: 0;
+	font-family: 'Bungee Inline', monospace;
+}
+
+
 /****************************************
  * Keyframe animation and styling
  ****************************************/
