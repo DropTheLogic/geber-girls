@@ -141,8 +141,24 @@ figcaption {
 	box-shadow: 2px 2px 2px #333;
 }
 
-.card p {
-	padding: 0 15px 15px 15px;
+.bio {
+	padding-top: 0;
+	font-size: 14px;
+	line-height: 19px;
+}
+
+.bio h3:first-letter {
+	font-size: 28px;
+}
+
+.bio-pic {
+	text-align: left;
+	margin: 0 0 15px;
+}
+
+.bio-member {
+	min-height: 260px;
+	padding-bottom: 5px;
 }
 
 .show {
@@ -226,5 +242,18 @@ figcaption {
 
 	#menu-shows:hover ~ #hero::after {
 		letter-spacing: 4px;
+	}
+}
+
+@media screen and (min-width: 560px) {
+	.bio-pic {
+		margin: 0 15px 8px 0;
+		float: left;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.bio-pic {
+		margin: 0 0 15px;
 	}
 }
