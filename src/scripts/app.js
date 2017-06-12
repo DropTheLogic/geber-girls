@@ -16,14 +16,14 @@ function getRandomInt(min, max) {
 }
 
 /**
- * Adds and removes given class to a random element within a group at a given
- * (random) interval.
+ * Adds and removes given class (or random class, if more than one is given)
+ * to a random element within a group at a given (random) interval.
  * @param {object} els - HTMLCollection of target elements
- * @param {string} classToAdd - class name to add to target elements
+ * @param {array} classArr - Class name string(s) to add to target elements
  * @param {integer} minTime - minimum random interval time (in milliseconds)
  * @param {integer} maxTime - maximum random interval time (in milliseconds)
  */
-function addClassRandomly(els, classToAdd, minTime, maxTime) {
+function addClassRandomly(els, classArr, minTime, maxTime) {
 	// Keep track of the currently selected index as well as the previous.
 	let previousIndex, randomIndex;
 
@@ -35,12 +35,15 @@ function addClassRandomly(els, classToAdd, minTime, maxTime) {
 		} while (randomIndex === previousIndex);
 		previousIndex = randomIndex; // Update previous index
 
-		// Remove class from any element that may currently have it
+		// Remove all classArr classes from target elements
 		for (let i = 0; i < els.length; i++) {
-			els[i].classList.remove(classToAdd);
+			for (let j = 0; j < classArr.length; j++) {
+				els[i].classList.remove(classArr[j]);
+			}
 		}
-		// Assign given class to random element
-		els[randomIndex].classList.add(classToAdd);
+		// Assign random class to random element (same class as before is ok)
+		let classIndex = getRandomInt(0, classArr.length);
+		els[randomIndex].classList.add(classArr[classIndex]);
 	}
 
 	// Calls addClass function, then calls itself after a given range of time.
@@ -86,9 +89,8 @@ function readyInit() {
 	// Select all .title <a> elements
 	let clickableEls = document.getElementsByClassName('title')[0]
 		.getElementsByTagName('a');
-	// Randomly add .spin and .wiggle classes to clickableEls
-	addClassRandomly(clickableEls, 'spin', 10000, 18000);
-	addClassRandomly(clickableEls, 'wiggle', 5000, 10000);
+	// Randomly add .spin or .wiggle classes to clickableEls
+	addClassRandomly(clickableEls, ['spin', 'wiggle'], 2500, 8000);
 }
 
 // Listen to page hash location, to virtually show/hide content based on id
