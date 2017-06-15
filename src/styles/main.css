@@ -64,6 +64,25 @@ h2 {
 	background-color: #89fc00;
 }
 
+spacer {
+	display: block;
+	height: 1px;
+	background-color: #333;
+	margin: 0 12px;
+}
+
+figure {
+	text-align: center;
+}
+
+figcaption {
+	margin-bottom: 10px;
+	font-style: italic;
+}
+
+/****************************************
+ * Main title
+ ****************************************/
 .title {
 	font-size: 22vw;
 	line-height: 22vw;
@@ -118,29 +137,21 @@ h2 {
 	content: 'SHOW';
 }
 
-spacer {
-	display: block;
-	height: 1px;
-	background-color: #333;
-	margin: 0 12px;
-}
-
-figure {
-	text-align: center;
-}
-
-figcaption {
-	margin-bottom: 10px;
-	font-style: italic;
-}
+/****************************************
+ * Shared Page Styles
+ ****************************************/
 
 .card {
+	display: block;
 	margin: 20px 0 25px;
 	padding-top: 15px;
 	background-color: rgba(255, 255, 255, 0.5);
 	box-shadow: 2px 2px 2px #333;
 }
 
+/****************************************
+ * Bio Page
+ ****************************************/
 .bio {
 	padding-top: 0;
 	font-size: 14px;
@@ -161,6 +172,10 @@ figcaption {
 	padding-bottom: 5px;
 }
 
+
+/****************************************
+ * Shows Page
+ ****************************************/
 .show {
 	text-align: center;
 }
