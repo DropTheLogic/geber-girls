@@ -162,6 +162,23 @@ figcaption {
 	padding-bottom: 51%;
 }
 
+.stage-backing::after {
+	content: 'Geber Girls TV';
+	font-size: 8vw;
+	font-family: 'Bungee Inline', monospace;
+	text-transform: uppercase;
+	font-weight: 700;
+	line-height: 85%;
+	text-align: center;
+	transform: rotate(-7deg);
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 48%;
+	opacity: 0.5;
+}
+
 #stage-title {
 	margin: 0;
 	font-size: 26px;
