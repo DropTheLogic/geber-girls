@@ -49,27 +49,54 @@
 		<!-- MEDIA -->
 		<section id="get-media" class="hidden">
 			<h2>Media</h2>
+
 			<content class="row">
 
-				<figure class="col-md-4 col-xs-6">
-					<img src="http://via.placeholder.com/300x150"
-						class="img-thumbnail">
-					<figcaption>Caption Here</figcaption>
-				</figure>
+				<!-- Player -->
+				<div class="stage-card card col-md-8">
+					<h3 id="stage-title"></h3>
+					<p>The Geber Girls</p>
+					<div id="stage">
+						<iframe class="stage-item" width="560" height="315"
+							frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
 
-				<figure class="col-md-4 col-xs-6">
-					<img src="http://via.placeholder.com/300x150"
-						class="img-thumbnail">
-					<figcaption>Caption Here</figcaption>
-				</figure>
+				<!-- Thumbnails -->
+				<div class="col-md-4 row">
+				<p><small>Click thumbnails to load a new video</small></p>
+					<div class="col-xs-6 col-md-12">
+						<figure class="card video-card">
+							<figcaption>Caption Here</figcaption>
+							<img class="yt-thumb img-responsive"
+								onclick="selectMedia(this)"
+								data-id="6PghpL5SURg"
+								title="The Cup Song">
+						</figure>
+					</div>
 
-				<figure class="col-md-4 col-xs-6">
-					<img src="http://via.placeholder.com/300x150"
-						class="img-thumbnail">
-					<figcaption>Caption Here</figcaption>
-				</figure>
+					<div class="col-xs-6 col-md-12">
+						<figure class="card video-card">
+							<figcaption>Caption Here</figcaption>
+							<img class="yt-thumb img-responsive"
+								onclick="selectMedia(this)"
+								data-id="_EXI6x8Xh4o"
+								title="Don't Stop Believing">
+						</figure>
+					</div>
 
+					<div class="col-xs-6 col-md-12">
+						<figure class="card video-card">
+							<figcaption>Caption Here</figcaption>
+							<img class="yt-thumb img-responsive"
+								onclick="selectMedia(this)"
+								data-id="Q3FIhaUSXEc"
+								title="Love Will Come To You"">
+						</figure>
+					</div>
+				</div>
 			</content>
+
 		</section>
 
 		<!-- BIO -->

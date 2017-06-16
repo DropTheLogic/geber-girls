@@ -76,7 +76,7 @@ figure {
 }
 
 figcaption {
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	font-style: italic;
 }
 
@@ -147,6 +147,45 @@ figcaption {
 	padding-top: 15px;
 	background-color: rgba(255, 255, 255, 0.5);
 	box-shadow: 2px 2px 2px #333;
+}
+
+/****************************************
+ * Media Page
+ ****************************************/
+.stage-card {
+	padding: 15px 0 0;
+	margin: 0 0 15px;
+}
+
+#stage {
+	position: relative;
+	padding-bottom: 51%;
+}
+
+#stage-title {
+	margin: 0;
+	font-size: 26px;
+	text-align: center;
+}
+
+#get-media p {
+	text-align: center;
+}
+
+.stage-item {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.video-card {
+	margin: 0 0 10px;
+	padding-top: 5px;
+	font-size: 11px;
+}
+
+.yt-thumb {
+	width: 100%;
 }
 
 /****************************************

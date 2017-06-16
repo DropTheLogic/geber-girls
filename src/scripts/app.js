@@ -83,6 +83,46 @@ function showPage(id) {
 }
 
 /**
+ * Takes element data and loads YouTube thumbnail and title into DOM
+ * @param {object} el - DOM element that has youtube data-id and title attrs
+ */
+function selectMedia(el) {
+	let id = el.getAttribute('data-id');
+	let title = el.getAttribute('title');
+
+	// Insert video src into target iframe element
+	let stage = document.getElementById('stage');
+	let iframe = stage.getElementsByTagName('iframe')[0];
+	let source = 'https://www.youtube.com/embed/' + id + '?rel=0';
+	iframe.setAttribute('src', source);
+
+	// Load title into iframe title element
+	let titleEl = document.getElementById('stage-title');
+	titleEl.innerText = title;
+
+	// Navigate to player, in case scrolled off screen
+	if (document.location.hash === '#get-media') location.href = '#get-media';
+}
+
+
+/**
+ * Load thumbnails and titles for youtube videos
+ */
+function insertYouTubeThumbs() {
+	// Find all img tags that need image lookup
+	let els = document.getElementsByClassName('yt-thumb');
+	for (let i = 0; i < els.length; i++) {
+		// Grab data-id data from element, set as source
+		let id = els[i].getAttribute('data-id');
+		let src = 'http://img.youtube.com/vi/' + id + '/mqdefault.jpg';
+		els[i].setAttribute('src', src);
+		// Set element caption from title data
+		let cap = els[i].parentElement.getElementsByTagName('figcaption')[0];
+		cap.innerText = els[i].getAttribute('title');
+	}
+}
+
+/**
  * Initial functions and event listeners
  */
 function readyInit() {
@@ -91,6 +131,13 @@ function readyInit() {
 		.getElementsByTagName('a');
 	// Randomly add .spin or .wiggle classes to clickableEls
 	addClassRandomly(clickableEls, ['spin', 'wiggle'], 2500, 8000);
+
+	// Load youtube video thumbnails
+	insertYouTubeThumbs();
+
+	// Load the first video for display
+	let firstYT = document.getElementsByClassName('yt-thumb')[0];
+	selectMedia(firstYT);
 }
 
 // Listen to page hash location, to virtually show/hide content based on id
