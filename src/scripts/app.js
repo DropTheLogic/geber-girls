@@ -123,6 +123,20 @@ function insertYouTubeThumbs() {
 }
 
 /**
+ * Fix hover elements from sticking when on mobile.
+ * With help from: https://stackoverflow.com/a/17234319/6867508
+ */
+function fixSticky() {
+	let el = this;
+	let par = el.parentNode;
+	let next = el.nextSibling;
+	par.removeChild(el);
+	setTimeout(function() {
+		par.insertBefore(el, next);
+	}, 0)
+}
+
+/**
  * Initial functions and event listeners
  */
 function readyInit() {
@@ -131,6 +145,13 @@ function readyInit() {
 		.getElementsByTagName('a');
 	// Randomly add .spin or .wiggle classes to clickableEls
 	addClassRandomly(clickableEls, ['spin', 'wiggle'], 2500, 8000);
+
+	// Add fixSticky to a tags in title
+	let title = document.getElementsByClassName('title')[0];
+	let tags = title.getElementsByTagName('a');
+	for (let i = 0; i < tags.length; i++) {
+		tags[i].setAttribute('ontouchend', 'this.onclick=fixSticky');
+	}
 
 	// Load youtube video thumbnails
 	insertYouTubeThumbs();
